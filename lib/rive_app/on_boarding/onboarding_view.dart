@@ -11,6 +11,22 @@ class OnBoardingView extends StatefulWidget {
 }
 
 class _OnBoardingViewState extends State<OnBoardingView> {
+  late RiveAnimationController _btnController;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _btnController = OneShotAnimation("active", autoplay: false);
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _btnController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +49,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             ),
           ),
           ImageFiltered(
-            imageFilter: ImageFilter.blur(sigmaX: 30, sigmaY: 30),
+            imageFilter: ImageFilter.blur(sigmaX: 10, sigmaY: 30),
             child: const RiveAnimation.asset('assets/rive_app/rive/shapes.riv'),
           ),
           SafeArea(
@@ -60,46 +76,50 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                     const SizedBox(
                       height: 16,
                     ),
-                    Container(
-                      width: 236,
-                      height: 64,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          boxShadow: const [
-                            BoxShadow(
-                                color: Colors.black,
-                                blurRadius: 10,
-                                offset: Offset(0, 10)
-                                // blurRadius: BorderRadius.circular(30)),
-                                )
-                          ]),
-                      child: Stack(children: [
-                        const RiveAnimation.asset(
-                          "assets/rive_app/rive/button.riv",
-                          fit: BoxFit.cover,
-                        ),
-                        Center(
-                          child: Transform.translate(
-                            offset: const Offset(4, 4),
-                            child: const Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(Icons.arrow_forward_rounded),
-                                SizedBox(
-                                  width: 4,
-                                ),
-                                Text(
-                                  "Start the course",
-                                  style: TextStyle(
-                                      fontFamily: "Inter",
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                )
-                              ],
-                            ),
+                    const Spacer(),
+                    GestureDetector(
+                      child: Container(
+                        width: 236,
+                        height: 64,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            boxShadow: const [
+                              BoxShadow(
+                                  color: Colors.black,
+                                  blurRadius: 10,
+                                  offset: Offset(0, 10)
+                                  // blurRadius: BorderRadius.circular(30)),
+                                  )
+                            ]),
+                        child: Stack(children: [
+                          const RiveAnimation.asset(
+                            "assets/rive_app/rive/button.riv",
+                            fit: BoxFit.cover,
                           ),
-                        )
-                      ]),
+                          Center(
+                            child: Transform.translate(
+                              offset: const Offset(4, 4),
+                              child: const Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Icons.arrow_forward_rounded),
+                                  SizedBox(
+                                    width: 4,
+                                  ),
+                                  Text(
+                                    "Start the course",
+                                    style: TextStyle(
+                                        fontFamily: "Inter",
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ),
+                          )
+                        ]),
+                      ),
+                      onTap: () {},
                     ),
                     const SizedBox(
                       height: 16,
