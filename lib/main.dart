@@ -1,4 +1,5 @@
 import 'package:familycalendar/rive_app/on_boarding/onboarding_view.dart';
+import 'package:familycalendar/rive_app/on_boarding/signin_view.dart';
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
@@ -30,7 +31,7 @@ class _MyAppState extends State<MyApp> {
         // appBar: AppBar(
         //   title: const Text(MyApp.title),
         // ),
-        body: const OnBoardingView(),
+        body: const SignInView(),
         extendBody: true, //<------like this
         bottomNavigationBar: SalomonBottomBar(
           currentIndex: _currentIndex,

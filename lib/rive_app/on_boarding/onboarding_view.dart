@@ -48,10 +48,10 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   )),
             ),
           ),
-          ImageFiltered(
-            imageFilter: ImageFilter.blur(sigmaX: 10, sigmaY: 30),
-            child: const RiveAnimation.asset('assets/rive_app/rive/shapes.riv'),
-          ),
+          // ImageFiltered(
+          //   imageFilter: ImageFilter.blur(sigmaX: 10, sigmaY: 30),
+          //   child: const RiveAnimation.asset('assets/rive_app/rive/shapes.riv'),
+          // ),
           SafeArea(
             child: Padding(
                 padding: const EdgeInsets.fromLTRB(40, 80, 40, 40),
@@ -92,9 +92,10 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                                   )
                             ]),
                         child: Stack(children: [
-                          const RiveAnimation.asset(
+                          RiveAnimation.asset(
                             "assets/rive_app/rive/button.riv",
                             fit: BoxFit.cover,
+                            controllers: [_btnController],
                           ),
                           Center(
                             child: Transform.translate(
@@ -119,7 +120,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                           )
                         ]),
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        _btnController.isActive = true;
+                      },
                     ),
                     const SizedBox(
                       height: 16,
