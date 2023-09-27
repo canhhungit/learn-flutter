@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
         // appBar: AppBar(
         //   title: const Text(MyApp.title),
         // ),
-        body: const SignInView(),
+        body: const OnBoardingView(),
         extendBody: true, //<------like this
         bottomNavigationBar: SalomonBottomBar(
           currentIndex: _currentIndex,

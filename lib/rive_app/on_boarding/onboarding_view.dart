@@ -1,7 +1,9 @@
 import 'dart:ui';
 
+import 'package:familycalendar/rive_app/on_boarding/signin_view.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:rive/rive.dart';
+// import 'package:rive/rive.dart';
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});
@@ -11,19 +13,19 @@ class OnBoardingView extends StatefulWidget {
 }
 
 class _OnBoardingViewState extends State<OnBoardingView> {
-  late RiveAnimationController _btnController;
+  // late RiveAnimationController _btnController;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    _btnController = OneShotAnimation("active", autoplay: false);
+    // _btnController = OneShotAnimation("active", autoplay: false);
   }
 
   @override
   void dispose() {
     // TODO: implement dispose
-    _btnController.dispose();
+    // _btnController.dispose();
     super.dispose();
   }
 
@@ -92,11 +94,19 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                                   )
                             ]),
                         child: Stack(children: [
-                          RiveAnimation.asset(
-                            "assets/rive_app/rive/button.riv",
-                            fit: BoxFit.cover,
-                            controllers: [_btnController],
+                          // RiveAnimation.asset(
+                          //   "assets/rive_app/rive/button.riv",
+                          //   fit: BoxFit.cover,
+                          //   controllers: [_btnController],
+                          // ),
+                          const SizedBox(
+                            height: 34,
                           ),
+                          CupertinoButton(
+                              // padding: const EdgeInsets.only(top: 20),
+                              color: Colors.white,
+                              child: const Row(children: [Text("Click")]),
+                              onPressed: () {}),
                           Center(
                             child: Transform.translate(
                               offset: const Offset(4, 4),
@@ -121,7 +131,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                         ]),
                       ),
                       onTap: () {
-                        _btnController.isActive = true;
+                        // _btnController.isActive = true;
                       },
                     ),
                     const SizedBox(
@@ -136,7 +146,8 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                     )
                   ],
                 )),
-          )
+          ),
+          const SignInView()
         ],
       ),
     );
