@@ -102,32 +102,35 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                           const SizedBox(
                             height: 34,
                           ),
-                          CupertinoButton(
-                              // padding: const EdgeInsets.only(top: 20),
-                              color: Colors.white,
-                              child: const Row(children: [Text("Click")]),
-                              onPressed: () {}),
-                          Center(
-                            child: Transform.translate(
-                              offset: const Offset(4, 4),
-                              child: const Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(Icons.arrow_forward_rounded),
-                                  SizedBox(
-                                    width: 4,
-                                  ),
-                                  Text(
-                                    "Start the course",
-                                    style: TextStyle(
-                                        fontFamily: "Inter",
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold),
-                                  )
-                                ],
-                              ),
-                            ),
-                          )
+                          Container(
+                            decoration: BoxDecoration(boxShadow: [
+                              BoxShadow(
+                                  color:
+                                      const Color(0xFFF77D8E).withOpacity(0.5),
+                                  blurRadius: 20,
+                                  offset: const Offset(0, 10))
+                            ]),
+                            child: CupertinoButton(
+                                padding: const EdgeInsets.all(20),
+                                color: const Color.fromARGB(255, 211, 83, 74),
+                                onPressed: () {},
+                                child: const Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(Icons.arrow_forward_rounded),
+                                    SizedBox(
+                                      width: 4,
+                                    ),
+                                    Text(
+                                      "Start the course",
+                                      style: TextStyle(
+                                          fontFamily: "Inter",
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold),
+                                    )
+                                  ],
+                                )),
+                          ),
                         ]),
                       ),
                       onTap: () {

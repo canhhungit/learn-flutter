@@ -93,6 +93,7 @@ class _SignInViewState extends State<SignInView> {
                     TextField(
                       decoration: authInputStyle("icon_lock"),
                       obscureText: true,
+                      keyboardType: TextInputType.number,
                     ),
                     const SizedBox(
                       height: 24,
