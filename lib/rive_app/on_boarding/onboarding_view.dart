@@ -56,16 +56,16 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           // ),
           SafeArea(
             child: Padding(
-                padding: const EdgeInsets.fromLTRB(40, 80, 40, 40),
+                padding: const EdgeInsets.fromLTRB(40, 40, 40, 40),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
                       width: 250,
-                      padding: const EdgeInsets.only(bottom: 16),
+                      padding: const EdgeInsets.only(bottom: 10),
                       child: const Text(
                         "Learn design & code",
-                        style: TextStyle(fontFamily: "Poppins", fontSize: 60),
+                        style: TextStyle(fontFamily: "Poppins", fontSize: 40),
                       ),
                     ),
                     Text(
