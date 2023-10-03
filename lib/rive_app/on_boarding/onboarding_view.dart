@@ -18,14 +18,12 @@ class _OnBoardingViewState extends State<OnBoardingView> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     // _btnController = OneShotAnimation("active", autoplay: false);
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     // _btnController.dispose();
     super.dispose();
   }

@@ -12,12 +12,17 @@ class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
-  _MyAppState createState() => _MyAppState();
+  State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
   var _currentIndex = 0;
-
+  var listScreen = <Widget>[
+    const OnBoardingView(),
+    const SafeArea(child: Center(child: Text("Like"))),
+    const SafeArea(child: Center(child: Text("Search"))),
+    const SafeArea(child: Center(child: Text("Profile")))
+  ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,7 +35,7 @@ class _MyAppState extends State<MyApp> {
         // appBar: AppBar(
         //   title: const Text(MyApp.title),
         // ),
-        body: const OnBoardingView(),
+        body: listScreen.elementAt(_currentIndex),
         extendBody: true, //<------like this
         bottomNavigationBar: SalomonBottomBar(
           currentIndex: _currentIndex,
