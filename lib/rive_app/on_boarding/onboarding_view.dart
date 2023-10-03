@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:familycalendar/rive_app/on_boarding/signin_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rive/rive.dart';
 // import 'package:rive/rive.dart';
 
 class OnBoardingView extends StatefulWidget {
@@ -50,10 +51,10 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   )),
             ),
           ),
-          // ImageFiltered(
-          //   imageFilter: ImageFilter.blur(sigmaX: 10, sigmaY: 30),
-          //   child: const RiveAnimation.asset('assets/rive_app/rive/shapes.riv'),
-          // ),
+          ImageFiltered(
+            imageFilter: ImageFilter.blur(sigmaX: 1, sigmaY: 1),
+            child: const RiveAnimation.asset('assets/rive_app/rive/shapes.riv'),
+          ),
           SafeArea(
             child: Padding(
                 padding: const EdgeInsets.fromLTRB(40, 40, 40, 40),
@@ -150,7 +151,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   ],
                 )),
           ),
-          const SignInView()
+          // const SignInView()
         ],
       ),
     );

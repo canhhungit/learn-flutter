@@ -1,5 +1,4 @@
 import 'package:familycalendar/rive_app/on_boarding/onboarding_view.dart';
-import 'package:familycalendar/rive_app/on_boarding/signin_view.dart';
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
